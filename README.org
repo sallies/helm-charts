@@ -1,1 +1,22 @@
-#+TITLE: helm charts
+#+TITLE: Helm Charts
+
+This repo collects a set of [[https://helm.sh][Helm]] charts curated by [[https://github.com/sallies][sallies]].
+
+* Usage
+
+[[https://helm.sh][Helm]] must be installed and initialized to use the charts.
+Please refer to Helm's [[https://helm.sh/docs/][documentation]] to get started.
+
+Once Helm is set up properly, add the repo as follows:
+
+#+BEGIN_SRC shell :results none
+$ helm repo add sallies https://sallies.github.io/helm-charts
+#+END_SRC
+
+* Charts
+
+|-----------+---------------------------------------+--------------------|
+| Name      | Source code repository                | Helm chart source  |
+|-----------+---------------------------------------+--------------------|
+| local-kms | https://github.com/nsmithuk/local-kms | [[./charts/local-kms]] |
+|-----------+---------------------------------------+--------------------|
