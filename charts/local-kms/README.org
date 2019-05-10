@@ -4,9 +4,9 @@
 
 * TL;DR;
 
-```bash
+#+BEGIN_SRC shell :results none
 $ helm install stable/local-kms
-```
+#+END_SRC
 
 * Introduction
 
