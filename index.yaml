@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  local-kms:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-05-10T14:53:52.398016+09:00
+    description: A Helm chart for Kubernetes
+    digest: c027bb819c1364bdc49b4df295ef1d8f7fa5f78fb84648d0d0f167b1786adc55
+    name: local-kms
+    urls:
+    - local-kms-0.1.1.tgz
+    version: 0.1.1
+generated: 2019-05-10T14:53:52.394282+09:00
