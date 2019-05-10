@@ -5,8 +5,10 @@
 * TL;DR;
 
 #+BEGIN_SRC shell :results none
-$ helm install stable/local-kms
+$ helm install sallies/local-kms
 #+END_SRC
+
+Need to add sallies helm chart repository. See [[../../README.org][Usage]].
 
 * Introduction
 
@@ -22,7 +24,7 @@ cluster using the [[https://helm.sh][Helm]] package manager.
 To install the chart with the release name ~my-release~:
 
 #+BEGIN_SRC shell :results none
-$ helm install --name my-release stable/local-kms
+$ helm install --name my-release sallies/local-kms
 #+END_SRC
 
 The command deploys local-kms on the Kubernetes cluster in the default configuration. The [[Configuration]]
@@ -64,11 +66,11 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 #+BEGIN_SRC shell :results none
 $ helm install --name my-release \
   --set env.ENV_NAME=ENV_VALUE \
-    stable/local-kms
+    sallies/local-kms
 #+END_SRC
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 #+BEGIN_SRC shell :results none
-$ helm install --name my-release -f values.yaml stable/local-kms
+$ helm install --name my-release -f values.yaml sallies/local-kms
 #+END_SRC
