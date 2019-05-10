@@ -1,0 +1,78 @@
+#+TITLE: nginx-unit helm chart
+
+
+[[http://unit.nginx.org/][nginx-unit]] is a  dynamic web and application server.
+
+* TL;DR;
+
+#+BEGIN_SRC shell :results none
+$ helm install sallies/nginx-unit
+#+END_SRC
+
+Need to add sallies helm chart repository. See [[../../README.org][Usage]].
+
+* Introduction
+
+This chart creates a [[http://unit.nginx.org/][nginx-unit]] deployment on a [[http://kubernetes.io][Kubernetes]]
+cluster using the [[https://helm.sh][Helm]] package manager.
+
+* Prerequisites
+
+- Kubernetes 1.9+ with Beta APIs enabled
+
+* Installing the Chart
+
+To install the chart with the release name ~my-release~:
+
+#+BEGIN_SRC shell :results none
+$ helm install --name my-release sallies/nginx-unit
+#+END_SRC
+
+The command deploys nginx-unit the Kubernetes cluster in the default configuration. The [[Configuration]]
+section lists the parameters that can be configured during installation.
+
+* Uninstalling the Chart
+
+To uninstall/delete the `my-release` deployment:
+
+```bash
+$ helm delete nginx-unit
+```
+The command removes all the Kubernetes components associated with the chart and deletes the release.
+
+* Configuration
+
+The following table lists the configurable parameters of the local-kms chart and their default values.
+
+|-----------------------+----------------------------------+-------------------------|
+| Parameter             | Description                      | Default                 |
+|-----------------------+----------------------------------+-------------------------|
+| ~image.repository~    | Docker image repository          | ~nginx/unit~            |
+| ~image.tag~           | Docker image tag                 | ~1.8.0-minimal~         |
+| ~image.pullPolicy~    | Docker image pull policy         | ~IfNotPresent~          |
+| ~nodeSelector~        | Node labels for pod assignment   | ~{}~                    |
+| ~resources~           | Pod resource requests and limits | ~{}~                    |
+| ~service.type~        | Type of service to create        | ~ClusterIP~             |
+| ~service.port~        | Type of service to create        | ~8300~                  |
+| ~service.httpPort~    | Type of service to create        | ~80~                    |
+| ~ingress.enabled~     | If ~true~, an ingress is created | ~false~                 |
+| ~ingress.annotations~ | Annotations for the ingress      | ~{}~                    |
+| ~ingress.path~        | If ~true~, an ingress is created | ~[]~                    |
+| ~ingress.hosts~       | A list of ingress hosts          | ~[chart-example.local]~ |
+| ~ingress.tls~         | A list of [[https://v1-8.docs.kubernetes.io/docs/api-reference/v1.8/#ingresstls-v1beta1-extensions][IngressTLS]] items       | ~[]~                    |
+|-----------------------+----------------------------------+-------------------------|
+
+
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
+
+#+BEGIN_SRC shell :results none
+$ helm install --name my-release \
+  --set env.ENV_NAME=ENV_VALUE \
+    sallies/nginx-unit
+#+END_SRC
+
+Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
+
+#+BEGIN_SRC shell :results none
+$ helm install --name my-release -f values.yaml sallies/nginx-unit
+#+END_SRC

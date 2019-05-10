@@ -1,6 +1,6 @@
 #+TITLE: Helm Charts
 
-This repo collects a set of [[https://helm.sh][Helm]] charts curated by [[https://github.com/sallies][sallies]].
+This repo collects a set of [[https://helm.sh][Helm]] charts.
 
 * Usage
 
@@ -15,8 +15,9 @@ $ helm repo add sallies https://sallies.github.io/helm-charts
 
 * Charts
 
-|-----------+---------------------------------------+--------------------|
-| Name      | Source code repository                | Helm chart source  |
-|-----------+---------------------------------------+--------------------|
-| local-kms | https://github.com/nsmithuk/local-kms | [[./charts/local-kms]] |
-|-----------+---------------------------------------+--------------------|
+|------------+---------------------------------------+---------------------|
+| Name       | Source code repository                | Helm chart source   |
+|------------+---------------------------------------+---------------------|
+| local-kms  | https://github.com/nsmithuk/local-kms | [[./charts/local-kms]]  |
+| NGINX Unit | https://github.com/nginx/unit         | [[./charts/nginx-unit]] |
+|------------+---------------------------------------+---------------------|
